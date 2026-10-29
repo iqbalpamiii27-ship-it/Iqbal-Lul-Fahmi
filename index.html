@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio Pribadi | Iqbal Lul Fahmi</title>
+  <style>
+    :root {
+      --bg: #fffaf4;
+      --paper: #ffffff;
+      --text: #29243a;
+      --muted: #716b7c;
+      --purple: #7655d9;
+      --pink: #ed6a9a;
+      --border: #eee5f4;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    header { position: sticky; top: 0; z-index: 5; background: rgba(255,250,244,.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    nav { max-width: 1050px; margin: auto; padding: 15px 22px; display: flex; justify-content: space-between; align-items: center; gap: 18px; }
+    .brand { text-decoration: none; color: var(--purple); font-weight: 900; letter-spacing: 1px; }
+    .navlinks { display: flex; flex-wrap: wrap; gap: 17px; }
+    .navlinks a { text-decoration: none; color: var(--muted); font-size: .9rem; font-weight: 700; }
+    .navlinks a:hover { color: var(--pink); }
+    .wrap { max-width: 1050px; padding: 0 22px; margin: auto; }
+    .hero { padding: 78px 0; display: grid; grid-template-columns: 1.3fr .8fr; gap: 36px; align-items: center; }
+    .badge { display: inline-block; padding: 6px 13px; background: #eee8ff; color: #6743c8; border-radius: 99px; font-size: .82rem; font-weight: 800; }
+    h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.12; letter-spacing: -1px; margin: 18px 0; }
+    h1 span { color: var(--purple); }
+    .intro { color: var(--muted); max-width: 620px; }
+    .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 25px; }
+    .btn { display: inline-block; padding: 12px 19px; border-radius: 12px; text-decoration: none; font-weight: 800; transition: .2s; }
+    .btn:hover { transform: translateY(-3px); }
+    .btn-primary { background: linear-gradient(120deg, var(--purple), #a36de7); color: white; box-shadow: 0 8px 20px #7655d933; }
+    .btn-secondary { background: white; color: var(--purple); border: 1px solid #ded3f5; }
+    .profile { padding: 30px; background: var(--paper); text-align: center; border: 1px solid var(--border); border-radius: 25px; box-shadow: 0 18px 45px #35254a12; }
+    .avatar { width: 112px; height: 112px; display: grid; place-items: center; margin: 0 auto 15px; border-radius: 50%; font-size: 3.2rem; background: linear-gradient(135deg, #e6dcff, #ffe0eb); }
+    .profile p { color: var(--muted); font-size: .92rem; }
+    .quick-info { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
+    .quick-info div { background: #faf7ff; border-radius: 12px; padding: 11px 7px; font-size: .85rem; }
+    .quick-info strong { display: block; color: var(--purple); }
+    section { padding: 66px 0; }
+    .tinted { background: #f5f0ff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .section-title { text-align: center; max-width: 660px; margin: 0 auto 32px; }
+    .section-title h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); margin-bottom: 7px; }
+    .section-title p { color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card { padding: 23px; background: white; border: 1px solid var(--border); border-radius: 18px; transition: .2s; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 12px 26px #35254a10; }
+    .emoji { font-size: 1.8rem; }
+    .card h3 { margin: 8px 0 5px; }
+    .card p { color: var(--muted); font-size: .93rem; }
+    .timeline { max-width: 760px; margin: auto; display: grid; gap: 16px; }
+    .edu { display: grid; grid-template-columns: 58px 1fr; gap: 16px; padding: 20px; border: 1px solid var(--border); background: white; border-radius: 17px; }
+    .edu-icon { display: grid; place-items: center; border-radius: 14px; background: #eee8ff; font-size: 1.6rem; }
+    .edu p { color: var(--muted); font-size: .93rem; }
+    .contact-panel { max-width: 780px; margin: auto; padding: 35px 25px; border-radius: 24px; background: white; border: 1px solid var(--border); text-align: center; box-shadow: 0 15px 35px #35254a0d; }
+    .contact-panel > p { color: var(--muted); }
+    .socials { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 24px; }
+    .social { min-width: 190px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 20px; border-radius: 13px; color: white; text-decoration: none; font-weight: 800; transition: .2s; }
+    .social:hover { transform: translateY(-4px); }
+    .instagram { background: linear-gradient(120deg, #833ab4, #fd1d1d, #fcb045); }
+    .whatsapp { background: linear-gradient(120deg, #10b85b, #078b62); }
+    footer { padding: 25px 15px; text-align: center; color: var(--muted); border-top: 1px solid var(--border); font-size: .88rem; }
+    footer strong { color: var(--text); }
+    @media (max-width: 760px) {
+      nav { align-items: flex-start; flex-direction: column; }
+      .navlinks { gap: 11px; }
+      .navlinks a { font-size: .82rem; }
+      .hero { grid-template-columns: 1fr; padding: 50px 0; }
+      .profile { max-width: 430px; width: 100%; margin: auto; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a class="brand" href="#beranda">PORTOFOLIO.</a>
+      <div class="navlinks">
+        <a href="#tentang">Tentang Saya</a>
+        <a href="#kelebihan">Kelebihan</a>
+        <a href="#pendidikan">Pendidikan</a>
+        <a href="#kontak">Kontak</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <section class="hero" id="beranda">
+        <div>
+          <span class="badge">✨ WEBSITE PORTOFOLIO PRIBADI</span>
+          <h1>Halo, saya<br><span>Iqbal Lul Fahmi</span></h1>
+          <p class="intro">Saya adalah seorang pelajar yang senang mempelajari hal baru, mengembangkan kemampuan, dan berusaha menjadi pribadi yang lebih baik setiap hari. Selamat datang di website pribadi saya!</p>
+          <div class="buttons">
+            <a class="btn btn-primary" href="#tentang">Tentang Saya ↓</a>
+            <a class="btn btn-secondary" href="#kontak">Hubungi Saya</a>
+          </div>
+        </div>
+        <aside class="profile">
+          <div class="avatar">🧑‍🎓</div>
+          <h2>Iqbal Lul Fahmi</h2>
+          <p>Pelajar • Smkn 1 Surabaya</p>
+          <div class="quick-info">
+            <div>🏫<strong>Sekolah</strong>Smkn 1 Surabaya</div>
+            <div>💻<strong>Jurusan</strong>Teknik Komputer Jaringan</div>
+          </div>
+        </aside>
+      </section>
+    </div>
+
+    <section class="tinted" id="tentang">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Tentang Saya</h2>
+          <p>Perkenalan singkat mengenai diri dan tujuan saya.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><div class="emoji">🙋</div><h3>Perkenalan</h3><p>Nama saya <b>Iqbal Lul Fahmi</b>. Saya merupakan pelajar yang ingin terus belajar, mendapatkan pengalaman baru, dan mengembangkan potensi diri.</p></article>
+          <article class="card"><div class="emoji">🎯</div><h3>Cita-cita</h3><p>Saya bercita-cita menjadi <b>Pilot</b>. Saya akan berusaha meraih cita-cita tersebut melalui belajar, disiplin, dan kerja keras.</p></article>
+          <article class="card"><div class="emoji">🎨</div><h3>Hobi</h3><p>Hobi saya adalah <b>Bersepeda</b>. Hobi ini menjadi kegiatan yang menyenangkan dan membantu saya mengisi waktu luang.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="kelebihan">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Kelebihan & Karakter</h2>
+          <p>Nilai positif yang berusaha saya terapkan dalam kehidupan sehari-hari.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><div class="emoji">🤝</div><h3>Bertanggung Jawab</h3><p>Berusaha menyelesaikan tugas dan menjalankan kewajiban dengan baik.</p></article>
+          <article class="card"><div class="emoji">📚</div><h3>Mau Belajar</h3><p>Terbuka terhadap ilmu baru dan bersedia memperbaiki kesalahan.</p></article>
+          <article class="card"><div class="emoji">⏰</div><h3>Disiplin</h3><p>Berusaha menghargai waktu dan menyelesaikan tugas tepat waktu.</p></article>
+          <article class="card"><div class="emoji">💡</div><h3>Kreatif</h3><p>Senang mencari ide dan mencoba cara baru ketika mengerjakan sesuatu.</p></article>
+          <article class="card"><div class="emoji">🌱</div><h3>Pantang Menyerah</h3><p>Berusaha bangkit dari kesulitan dan menjadikannya pengalaman untuk berkembang.</p></article>
+          <article class="card"><div class="emoji">😊</div><h3>Menghargai Orang Lain</h3><p>Berusaha mendengarkan pendapat orang lain dan bekerja sama dengan baik.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="tinted" id="pendidikan">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Tingkat Pendidikan</h2>
+          <p>Riwayat pendidikan saya dari sekolah dasar hingga saat ini.</p>
+        </div>
+        <div class="timeline">
+          <article class="edu"><div class="edu-icon">📘</div><div><h3>Sekolah Dasar (SD)</h3><p>Sdn Gayungan 2 Surabaya</p></div></article>
+          <article class="edu"><div class="edu-icon">📗</div><div><h3>Sekolah Menengah Pertama (SMP)</h3><p>Mts ittaqu Surabaya</p></div></article>
+          <article class="edu"><div class="edu-icon">🎓</div><div><h3>Sekolah Menengah Kejuruan (SMK)</h3><p>Smkn 1 Surabaya • Jurusan: Teknik Komputer Jaringan</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontak">
+      <div class="wrap">
+        <div class="contact-panel">
+          <div class="section-title" style="margin-bottom:0">
+            <h2>Kontak & Media Sosial</h2>
+            <p>Terima kasih sudah mengunjungi website saya. Kamu dapat menghubungi saya melalui media sosial berikut.</p>
+          </div>
+          <div class="socials">
+            <!-- Ganti username_instagram dengan username Instagram kamu -->
+            <a class="social instagram" href="https://instagram.com/iqbllfhmii_instagram" target="_blank" rel="noopener noreferrer"><span>◎</span> Instagram</a>
+            <!-- Ganti 62xxxxxxxxxx dengan nomor WhatsApp kamu, tanpa tanda + -->
+            <a class="social whatsapp" href="https://wa.me/088211820121" target="_blank" rel="noopener noreferrer"><span>☎</span> WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Iqbal Lul Fahmi</strong> • Website Portofolio Pribadi</p>
+    <p>© <span id="tahun"></span> Iqbal Lul Fahmi. Semua hak dilindungi.</p>
+  </footer>
+  <script>
+    document.getElementById("tahun").textContent = new Date().getFullYear();
+  </script>
+</body>
+  </html>
+  
